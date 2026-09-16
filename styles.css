@@ -16,14 +16,9 @@ body {
   overflow-x: hidden;
   color: var(--ink);
   background:
-    radial-gradient(circle at 8% 9%, rgba(255, 255, 255, 0.72) 0 2px, rgba(238, 215, 255, 0.18) 7px, transparent 18px),
-    radial-gradient(circle at 77% 7%, rgba(255, 255, 255, 0.64) 0 3px, rgba(185, 228, 255, 0.18) 9px, transparent 22px),
-    radial-gradient(circle at 22% 35%, rgba(196, 180, 255, 0.28) 0 5%, rgba(240, 207, 250, 0.12) 10%, transparent 24%),
-    radial-gradient(circle at 86% 31%, rgba(222, 197, 255, 0.3) 0 4%, rgba(166, 215, 255, 0.12) 11%, transparent 25%),
-    radial-gradient(circle at 12% 76%, rgba(148, 166, 255, 0.25) 0 6%, rgba(234, 198, 239, 0.11) 13%, transparent 28%),
-    radial-gradient(circle at 72% 82%, rgba(231, 183, 223, 0.24) 0 5%, rgba(160, 204, 255, 0.1) 14%, transparent 28%),
-    radial-gradient(ellipse at 48% 12%, rgba(169, 155, 236, 0.52), transparent 42%),
-    linear-gradient(155deg, #12183f 0%, #1c2d68 38%, #493b83 68%, #17224f 100%);
+    linear-gradient(rgba(8, 14, 45, 0.44), rgba(16, 19, 62, 0.76)),
+    url("images/bubble-bg.webp") center top / cover fixed,
+    var(--navy);
   background-attachment: fixed;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 300;
@@ -74,23 +69,6 @@ a { color: inherit; }
   content: "";
   background: radial-gradient(circle at 50% 18%, rgba(226, 208, 255, 0.32), transparent 30%), linear-gradient(to bottom, rgba(10, 18, 58, 0.06), rgba(12, 17, 51, 0.72));
 }
-.hero-photos { position: absolute; z-index: -1; inset: 0; overflow: hidden; pointer-events: none; }
-.hero-photo {
-  position: absolute;
-  width: clamp(110px, 18vw, 245px);
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  opacity: 0.3;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 36px;
-  filter: saturate(0.72) hue-rotate(8deg) contrast(0.92);
-  box-shadow: 0 28px 70px rgba(4, 9, 35, 0.46);
-}
-.hero-photo--1 { top: 7%; left: 3%; transform: rotate(-8deg); }
-.hero-photo--2 { top: 6%; right: 3%; transform: rotate(7deg); }
-.hero-photo--3 { bottom: 7%; left: 6%; transform: rotate(5deg); }
-.hero-photo--4 { right: 5%; bottom: 8%; transform: rotate(-6deg); }
-
 .hero-content {
   width: min(700px, 100%);
   padding: clamp(34px, 6vw, 70px);
@@ -247,11 +225,6 @@ footer {
 @media (max-width: 760px) {
   body { background-attachment: scroll; }
   .hero { min-height: 100svh; padding: 62px 18px 86px; }
-  .hero-photo { width: 120px; opacity: 0.18; }
-  .hero-photo--1 { top: 3%; left: -38px; }
-  .hero-photo--2 { top: 8%; right: -45px; }
-  .hero-photo--3 { bottom: 4%; left: -44px; }
-  .hero-photo--4 { right: -48px; bottom: 10%; }
   .hero-content { padding: 34px 18px; border-radius: 30px; }
   .logo-img { width: 100%; }
   .event-meta { grid-template-columns: 1fr; }
