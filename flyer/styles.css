@@ -88,7 +88,7 @@ footer {
   width: 71%;
   height: auto;
   margin: 0 auto;
-  filter: brightness(1.7) contrast(1.08) drop-shadow(0 2px 12px rgb(255 202 236 / 22%));
+  filter: brightness(0) invert(1) drop-shadow(0 2px 12px rgb(255 202 236 / 28%));
 }
 
 .visually-hidden {
@@ -275,6 +275,10 @@ footer {
 }
 
 footer {
+  position: absolute;
+  right: 5.2%;
+  bottom: 3.6%;
+  left: 5.2%;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -295,8 +299,8 @@ footer span {
 }
 
 .web-link img {
-  width: 11.5%;
-  min-width: 34px;
+  width: clamp(44px, 3.9vw, 54px);
+  min-width: 0;
   height: auto;
   padding: 2px;
   border-radius: 3px;
@@ -319,6 +323,10 @@ footer span {
 
   .flyer {
     box-shadow: none;
+  }
+
+  .web-link img {
+    width: 14mm;
   }
 }
 
