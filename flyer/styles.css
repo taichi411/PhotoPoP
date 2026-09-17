@@ -179,9 +179,9 @@ footer {
   --accent: #fff;
   position: relative;
   display: grid;
-  grid-template-columns: 18% 34% 1fr;
+  grid-template-columns: 18% max-content minmax(0, 1fr);
   align-items: center;
-  gap: 2%;
+  gap: 1.2%;
   min-height: 58px;
   padding: 1.05% 2.35%;
   border: 1px solid rgb(64 76 122 / 16%);
@@ -226,15 +226,11 @@ footer {
 
 .act h2 {
   margin: .16em 0 0;
-  font-size: clamp(.86rem, 2.99vw, 1.32rem);
+  font-size: clamp(.75rem, 2.59vw, 1.14rem);
   font-weight: 700;
   letter-spacing: -.035em;
   line-height: 1.02;
   white-space: nowrap;
-}
-
-.act-name-long h2 {
-  font-size: clamp(.75rem, 2.59vw, 1.14rem);
 }
 
 .act p {
