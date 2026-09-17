@@ -178,8 +178,12 @@ footer {
 .act {
   --accent: #fff;
   position: relative;
-  min-height: 64px;
-  padding: 1.55% 2.7% 1.75%;
+  display: grid;
+  grid-template-columns: 18% 34% 1fr;
+  align-items: center;
+  gap: 2%;
+  min-height: 58px;
+  padding: 1.05% 2.35%;
   border: 1px solid rgb(64 76 122 / 16%);
   border-radius: 9px;
   background: var(--panel);
@@ -204,53 +208,48 @@ footer {
 .act time {
   color: var(--accent);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(.4rem, 1.28vw, .56rem);
+  font-size: clamp(.46rem, 1.48vw, .65rem);
   font-weight: 700;
   letter-spacing: .05em;
   white-space: nowrap;
 }
 
-.act-detail {
-  width: 100%;
-}
-
-.act-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1em;
-  margin-bottom: .2em;
-}
-
 .act .cover-name {
   color: #697087;
-  font-size: clamp(.36rem, 1.08vw, .48rem);
+  font-size: clamp(.36rem, 1.06vw, .47rem);
   line-height: 1;
 }
 
-.act-main {
-  display: grid;
-  grid-template-columns: 37% 1fr;
-  align-items: start;
-  gap: 3%;
+.act-name {
+  min-width: 0;
 }
 
 .act h2 {
-  margin: 0;
-  font-size: clamp(.68rem, 2.45vw, 1.08rem);
+  margin: .16em 0 0;
+  font-size: clamp(.78rem, 2.72vw, 1.2rem);
   font-weight: 700;
-  line-height: 1.12;
+  letter-spacing: -.035em;
+  line-height: 1.02;
+  white-space: nowrap;
+}
+
+.act-name-long h2 {
+  font-size: clamp(.68rem, 2.35vw, 1.04rem);
 }
 
 .act p {
   margin: .06em 0;
   color: var(--muted);
-  font-size: clamp(.42rem, 1.42vw, .62rem);
-  line-height: 1.28;
+  font-size: clamp(.46rem, 1.52vw, .67rem);
+  line-height: 1.2;
 }
 
 .members {
-  padding-top: .05em;
+  min-width: 0;
+}
+
+.members p {
+  white-space: nowrap;
 }
 
 .party {
