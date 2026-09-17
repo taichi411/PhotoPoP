@@ -230,7 +230,7 @@ footer {
 
 .act-main {
   display: grid;
-  grid-template-columns: 31% 1fr;
+  grid-template-columns: 37% 1fr;
   align-items: start;
   gap: 3%;
 }
