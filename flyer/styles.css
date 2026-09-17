@@ -226,7 +226,7 @@ footer {
 
 .act h2 {
   margin: .16em 0 0;
-  font-size: clamp(.78rem, 2.72vw, 1.2rem);
+  font-size: clamp(.86rem, 2.99vw, 1.32rem);
   font-weight: 700;
   letter-spacing: -.035em;
   line-height: 1.02;
@@ -234,13 +234,13 @@ footer {
 }
 
 .act-name-long h2 {
-  font-size: clamp(.68rem, 2.35vw, 1.04rem);
+  font-size: clamp(.75rem, 2.59vw, 1.14rem);
 }
 
 .act p {
   margin: .06em 0;
   color: var(--muted);
-  font-size: clamp(.46rem, 1.52vw, .67rem);
+  font-size: clamp(.51rem, 1.67vw, .74rem);
   line-height: 1.2;
 }
 
@@ -269,7 +269,9 @@ footer {
 
 .party-heading {
   display: flex;
-  align-items: baseline;
+  grid-row: 1 / span 2;
+  align-self: center;
+  align-items: center;
   gap: 1em;
   text-align: left;
 }
