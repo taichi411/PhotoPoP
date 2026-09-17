@@ -179,7 +179,7 @@ footer {
   --accent: #fff;
   position: relative;
   display: grid;
-  grid-template-columns: 18% max-content minmax(0, 1fr);
+  grid-template-columns: 18% 32% minmax(0, 1fr);
   align-items: center;
   gap: 1.2%;
   min-height: 58px;
