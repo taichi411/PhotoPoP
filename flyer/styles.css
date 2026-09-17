@@ -1,0 +1,312 @@
+:root {
+  color-scheme: dark;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --ink: #fff;
+  --muted: #e8e4f5;
+  --panel: rgb(7 11 42 / 82%);
+  --pink: #ff9dd5;
+  --blue: #9dcbff;
+  --mint: #a7efe7;
+  --lilac: #d8b5ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #090d2c;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: clamp(12px, 3vw, 42px);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 10%, rgb(114 85 255 / 30%), transparent 28rem),
+    radial-gradient(circle at 82% 84%, rgb(255 86 190 / 22%), transparent 30rem),
+    #080b24;
+}
+
+.flyer {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 760px);
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: clamp(34px, 7vw, 76px) clamp(18px, 5.4vw, 56px) clamp(22px, 5vw, 48px);
+  background: #12173b url("./images/background.jpg") center / cover no-repeat;
+  box-shadow: 0 30px 100px rgb(0 0 0 / 55%);
+}
+
+.flyer::before,
+.flyer::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+
+.flyer::before {
+  background:
+    linear-gradient(180deg, rgb(6 10 34 / 12%) 0%, rgb(7 10 37 / 50%) 25%, rgb(6 9 34 / 76%) 100%),
+    radial-gradient(circle at 20% 15%, rgb(111 78 255 / 28%), transparent 40%),
+    radial-gradient(circle at 75% 85%, rgb(255 79 185 / 20%), transparent 38%);
+}
+
+.flyer::after {
+  box-shadow: inset 0 0 140px rgb(2 4 20 / 52%);
+}
+
+.hero {
+  text-align: center;
+}
+
+.eyebrow,
+.subtitle,
+.venue,
+footer {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: .3em;
+}
+
+.eyebrow {
+  color: #eedcff;
+  font-size: clamp(.58rem, 1.7vw, .82rem);
+}
+
+h1 {
+  margin: .3em 0 .08em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(3rem, 12vw, 6.7rem);
+  font-weight: 700;
+  letter-spacing: .11em;
+  line-height: .95;
+  text-shadow: 0 3px 30px rgb(92 77 197 / 35%);
+}
+
+h1 span {
+  font-weight: 400;
+}
+
+.subtitle {
+  color: #afc6ff;
+  font-size: clamp(.57rem, 1.75vw, .84rem);
+}
+
+.event-date {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: .55em;
+  margin-top: clamp(24px, 6vw, 50px);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.75rem, 6vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.event-date .day {
+  font-size: .72em;
+}
+
+.venue {
+  margin-top: .45em;
+  color: #f0c6ff;
+  font-size: clamp(.9rem, 3vw, 1.35rem);
+}
+
+.event-summary {
+  margin: clamp(22px, 5vw, 42px) auto 0;
+  padding: clamp(12px, 2.5vw, 20px);
+  border: 1px solid rgb(220 203 255 / 45%);
+  border-radius: 18px;
+  background: rgb(13 18 57 / 82%);
+  backdrop-filter: blur(14px);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(.84rem, 2.7vw, 1.2rem);
+  letter-spacing: .11em;
+}
+
+.event-summary p {
+  margin: 0;
+}
+
+.event-summary .live-price {
+  margin-top: .45em;
+  color: #f5d5ff;
+}
+
+.divider {
+  margin: 0 .55em;
+  color: rgb(255 255 255 / 42%);
+}
+
+.copy-note {
+  margin: 1em 0 1.3em;
+  color: #f8f5ff;
+  font-size: clamp(.66rem, 2vw, .9rem);
+}
+
+.timetable {
+  display: grid;
+  gap: clamp(9px, 1.8vw, 14px);
+}
+
+.act {
+  --accent: #fff;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(112px, 29%) 1fr;
+  gap: clamp(12px, 3vw, 26px);
+  min-height: 94px;
+  padding: clamp(13px, 2.8vw, 20px) clamp(14px, 3.2vw, 25px);
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 16px;
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+}
+
+.act::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 9px;
+  border-radius: 16px 0 0 16px;
+  background: var(--accent);
+  content: "";
+}
+
+.act-pink { --accent: var(--pink); }
+.act-blue { --accent: var(--blue); }
+.act-mint { --accent: var(--mint); }
+.act-lilac { --accent: var(--lilac); }
+
+.act time {
+  color: var(--accent);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(.9rem, 2.7vw, 1.18rem);
+  font-weight: 700;
+  letter-spacing: .05em;
+  white-space: nowrap;
+}
+
+.act h2 {
+  margin: -.1em 0 .18em;
+  font-size: clamp(1.2rem, 3.8vw, 1.7rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.act p {
+  margin: .13em 0;
+  color: var(--muted);
+  font-size: clamp(.75rem, 2.25vw, 1rem);
+  line-height: 1.45;
+}
+
+.party {
+  margin-top: clamp(14px, 3vw, 24px);
+  padding: clamp(22px, 5vw, 40px);
+  border: 1px solid rgb(255 180 224 / 55%);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgb(74 20 78 / 90%), rgb(38 12 58 / 88%));
+  text-align: center;
+  backdrop-filter: blur(14px);
+}
+
+.party-heading {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(18px, 5vw, 50px);
+  text-align: left;
+}
+
+.party time {
+  color: var(--pink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-weight: 700;
+}
+
+.party h2 {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.35rem, 4.5vw, 2.1rem);
+  letter-spacing: .13em;
+}
+
+.party > p {
+  margin: clamp(18px, 4vw, 34px) 0 0;
+  font-size: clamp(.82rem, 2.5vw, 1.1rem);
+}
+
+.party .party-price {
+  margin-top: .8em;
+  color: #f9d7ea;
+}
+
+footer {
+  margin-top: clamp(24px, 5vw, 44px);
+  color: #d8d7f1;
+  font-size: clamp(.48rem, 1.5vw, .7rem);
+  text-align: center;
+}
+
+footer span {
+  padding: 0 1em;
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 0;
+  }
+
+  .flyer {
+    min-height: 100svh;
+    box-shadow: none;
+  }
+
+  h1 {
+    letter-spacing: .07em;
+  }
+
+  .act {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .act-detail {
+    padding-left: 0;
+  }
+
+  .party-heading {
+    display: grid;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+@media print {
+  @page {
+    size: A6 portrait;
+    margin: 0;
+  }
+
+  body {
+    padding: 0;
+    background: none;
+  }
+
+  .flyer {
+    width: 105mm;
+    min-height: 148mm;
+    padding: 7mm 6mm 5mm;
+    box-shadow: none;
+  }
+}
