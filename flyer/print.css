@@ -326,7 +326,7 @@ footer span {
 }
 
 .web-link img {
-  width: clamp(44px, 3.9vw, 54px);
+  width: clamp(54px, 5.85vw, 80px);
   min-width: 0;
   height: auto;
   padding: 2px;
@@ -337,6 +337,12 @@ footer span {
 .web-link p,
 .footer-location {
   margin: 0;
+}
+
+.web-link p {
+  font-size: clamp(.55rem, 1.8vw, .78rem);
+  letter-spacing: .16em;
+  line-height: 1.15;
 }
 
 .footer-location {
