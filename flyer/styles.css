@@ -340,6 +340,8 @@ footer span {
 }
 
 .footer-location {
+  line-height: 1.45;
+  text-align: right;
   white-space: nowrap;
 }
 
