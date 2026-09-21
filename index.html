@@ -294,6 +294,52 @@
     margin-bottom:22px;
   }
 
+  /* ---------- TIMETABLE ---------- */
+  .timetable{
+    max-width:none;
+    background:var(--bg-alt);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .timetable-inner{
+    width:min(820px, calc(100% - 48px));
+    margin:0 auto;
+  }
+  .timetable-list{
+    list-style:none;
+    border-top:1px solid var(--line);
+  }
+  .timetable-item{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    align-items:center;
+    gap:36px;
+    min-height:92px;
+    padding:20px 24px;
+    border-bottom:1px solid var(--line);
+  }
+  .timetable-time{
+    font-family:'Space Mono', monospace;
+    font-size:clamp(0.9rem, 1.7vw, 1.05rem);
+    color:var(--amber);
+    letter-spacing:0.04em;
+    font-variant-numeric:tabular-nums;
+  }
+  .timetable-act{
+    font-family:'Shippori Mincho', serif;
+    font-size:clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight:700;
+    color:var(--cream);
+    letter-spacing:0.05em;
+  }
+  .timetable-item.party{
+    background:rgba(234,193,213,0.08);
+  }
+  .timetable-item.party .timetable-time,
+  .timetable-item.party .timetable-act{
+    color:var(--amber);
+  }
+
   /* ---------- LINEUP ---------- */
   .lineup{background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .band-grid{
@@ -448,6 +494,10 @@
   @media (max-width:760px){
     .overview{grid-template-columns:1fr; gap:40px;}
     .overview-info{border-left:none; border-top:1px solid var(--line); padding-left:0; padding-top:28px;}
+    .timetable-inner{width:calc(100% - 40px);}
+    .timetable-item{grid-template-columns:1fr; gap:5px; min-height:84px; padding:17px 8px;}
+    .timetable-time{font-size:0.83rem;}
+    .timetable-act{font-size:1.22rem;}
     .band-grid{grid-template-columns:1fr;}
     section{padding:80px 20px;}
   }
@@ -591,6 +641,37 @@
         <img src="images/image03.jpg" alt="ステージでベースを演奏する出演者" loading="lazy">
         <img src="images/image04.jpg" alt="ピンクのキーボードを演奏する出演者" loading="lazy">
       </div>
+    </div>
+  </section>
+
+  <!-- ================= TIMETABLE ================= -->
+  <section class="timetable" id="timetable">
+    <div class="timetable-inner">
+      <div class="section-head">
+        <div class="num">TIMETABLE</div>
+      </div>
+      <ol class="timetable-list">
+        <li class="timetable-item">
+          <time class="timetable-time" datetime="2027-01-10T17:00:00+09:00">17:00～17:30</time>
+          <div class="timetable-act">AbemaO</div>
+        </li>
+        <li class="timetable-item">
+          <time class="timetable-time" datetime="2027-01-10T17:50:00+09:00">17:50～18:20</time>
+          <div class="timetable-act">KNTラボ</div>
+        </li>
+        <li class="timetable-item">
+          <time class="timetable-time" datetime="2027-01-10T18:40:00+09:00">18:40～19:10</time>
+          <div class="timetable-act">サケシカナシナシ</div>
+        </li>
+        <li class="timetable-item">
+          <time class="timetable-time" datetime="2027-01-10T19:30:00+09:00">19:30～20:00</time>
+          <div class="timetable-act">モツの極みやまや</div>
+        </li>
+        <li class="timetable-item party">
+          <time class="timetable-time" datetime="2027-01-10T20:00:00+09:00">20:00～</time>
+          <div class="timetable-act">新年会</div>
+        </li>
+      </ol>
     </div>
   </section>
 
