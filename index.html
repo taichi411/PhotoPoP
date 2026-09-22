@@ -319,14 +319,14 @@
     border-bottom:1px solid var(--line);
   }
   .timetable-time{
-    font-family:'Space Mono', monospace;
+    font-family:'Noto Sans JP', sans-serif;
     font-size:clamp(0.9rem, 1.7vw, 1.05rem);
     color:var(--amber);
     letter-spacing:0.04em;
     font-variant-numeric:tabular-nums;
   }
   .timetable-act{
-    font-family:'Shippori Mincho', serif;
+    font-family:'Noto Sans JP', sans-serif;
     font-size:clamp(1.2rem, 2.5vw, 1.6rem);
     font-weight:700;
     color:var(--cream);
@@ -601,6 +601,159 @@
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
     #flash-container{display:none;}
+  }
+
+  /* ---------- LIGHT FLYER THEME ---------- */
+  :root{
+    --bg:#f7f8fc;
+    --bg-alt:#ffffff;
+    --cream:#17213b;
+    --cream-dim:#596176;
+    --amber:#b33c71;
+    --wine:#76508a;
+    --wine-deep:#76508a;
+    --brass:#327f82;
+    --line:rgba(23,33,59,.14);
+  }
+  body{background:var(--bg); color:var(--cream);}
+  .hero{
+    background-color:#e9eaf4;
+    background-image:url('images/bubble-bg.jpg');
+    background-size:cover;
+    background-position:center;
+    border-bottom-color:rgba(23,33,59,.12);
+    isolation:isolate;
+  }
+  .hero-bubbles{
+    visibility:hidden;
+    z-index:1;
+    opacity:.94;
+    filter:saturate(.86) brightness(1.06);
+  }
+  .hero::after{
+    display:none;
+  }
+  .hero-content{
+    z-index:2;
+    padding:30px 34px;
+    background:rgba(255,255,255,.78);
+    border:1px solid rgba(255,255,255,.72);
+    border-radius:22px;
+    box-shadow:0 22px 60px rgba(23,33,59,.12);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+  }
+  .hero .logo-img{
+    height:240px;
+    object-fit:cover;
+    object-position:center;
+    margin:0;
+    filter:contrast(1.3);
+    mix-blend-mode:normal;
+    opacity:1;
+  }
+  .hero .presents,
+  .countdown-label,
+  .hero .meta span{color:var(--wine);}
+  .hero .meta,
+  .countdown-timer{color:var(--cream);}
+  .hero .venue-line a{color:var(--wine); border-bottom-color:var(--wine);}
+  .scroll-cue{background:linear-gradient(var(--wine),transparent);}
+
+  section{background:var(--bg-alt);}
+  #overview{max-width:none; padding-left:max(24px,calc((100% - 1032px)/2)); padding-right:max(24px,calc((100% - 1032px)/2));}
+  .overview-info dd,
+  .overview-text .lead{color:var(--cream);}
+  .overview-text p,
+  .overview-text .feature-list li,
+  .overview-text .feature-suffix,
+  .overview-text .credit{color:var(--cream-dim);}
+
+  .timetable{
+    background:#f1f3f8;
+    border-color:var(--line);
+  }
+  .timetable-list{
+    display:grid;
+    gap:12px;
+    border-top:0;
+  }
+  .timetable-item{
+    position:relative;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:0 12px 32px rgba(23,33,59,.055);
+  }
+  .timetable-item::before{
+    content:"";
+    position:absolute;
+    inset:0 auto 0 0;
+    width:6px;
+    background:var(--brass);
+  }
+  .timetable-item:nth-child(2)::before{background:#3579ad;}
+  .timetable-item:nth-child(3)::before{background:#278a82;}
+  .timetable-item:nth-child(4)::before{background:#76508a;}
+  .timetable-time{color:var(--wine); font-weight:700;}
+  .timetable-act{color:var(--cream);}
+  .timetable-item.party{
+    background:#fbf1f8;
+    border-color:rgba(179,60,113,.26);
+  }
+  .timetable-item.party::before{background:var(--wine);}
+  .timetable-item.party .timetable-time,
+  .timetable-item.party .timetable-act{color:var(--cream);}
+
+  .lineup{
+    background:#f7f8fc;
+    border-color:var(--line);
+  }
+  .band-grid{background:#f7f8fc;}
+  .band-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:0 16px 40px rgba(23,33,59,.07);
+  }
+  .band-card .info{
+    background:#fff;
+    border-top-color:var(--line);
+  }
+  .band-card .info .source-name{color:#73798a;}
+  .band-card .info .band-name{color:var(--cream);}
+  .band-card .info .members{color:#535b70;}
+  .band-card .tag{
+    color:#fff;
+    background:rgba(23,33,59,.78);
+  }
+
+  footer{
+    background:rgba(255,255,255,.94);
+    border-top-color:var(--line);
+    box-shadow:0 -10px 30px rgba(23,33,59,.06);
+  }
+  footer .fnote,
+  footer .venue-address{color:var(--cream-dim);}
+  .ticket-btn{color:#fff; background:var(--wine); border-color:var(--wine);}
+  .ticket-btn:hover{color:var(--wine); background:#fff;}
+  a:focus-visible{outline-color:var(--wine);}
+
+  @media(max-width:760px){
+    .hero{
+      background-color:var(--bg);
+      background-image:url('images/bubble-bg.jpg');
+      background-size:auto 320px;
+      background-repeat:no-repeat;
+      background-position:70% top;
+    }
+    .hero-bubbles{opacity:.82; filter:saturate(.82) brightness(1.08);}
+    .hero::after{display:none;}
+    .hero-content{padding:24px; background:var(--bg); border:0; border-radius:0; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none;}
+    .hero .logo-img{height:190px; margin:0;}
+    #overview{padding-left:20px; padding-right:20px;}
+    .timetable-item{padding-left:22px;}
   }
 </style>
 </head>
