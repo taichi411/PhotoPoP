@@ -625,9 +625,18 @@
     filter:saturate(.86) brightness(1.06);
   }
   .hero::after{
-    background:
-      linear-gradient(90deg,rgba(249,250,253,.9) 0%,rgba(249,250,253,.78) 29%,rgba(249,250,253,.3) 47%,rgba(249,250,253,0) 70%),
-      linear-gradient(0deg,var(--bg),transparent 22%);
+    z-index:1;
+    background:linear-gradient(0deg,var(--bg),transparent 22%);
+  }
+  .hero-content{
+    z-index:2;
+    padding:30px 34px;
+    background:rgba(255,255,255,.78);
+    border:1px solid rgba(255,255,255,.72);
+    border-radius:22px;
+    box-shadow:0 22px 60px rgba(23,33,59,.12);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
   }
   .hero .logo-img{
     height:auto;
@@ -729,7 +738,7 @@
     .hero{background:var(--bg);}
     .hero-bubbles{opacity:.82; filter:saturate(.82) brightness(1.08);}
     .hero::after{background:linear-gradient(0deg,var(--bg),transparent);}
-    .hero-content{background:var(--bg);}
+    .hero-content{padding:24px; background:var(--bg); border:0; border-radius:0; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none;}
     .hero .logo-img{height:auto; margin:-22px 0;}
     #overview{padding-left:20px; padding-right:20px;}
     .timetable-item{padding-left:22px;}
