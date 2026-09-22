@@ -619,14 +619,16 @@
   .hero{
     background:#e9eaf4;
     border-bottom-color:rgba(23,33,59,.12);
+    isolation:isolate;
   }
   .hero-bubbles{
+    z-index:0;
     opacity:.94;
     filter:saturate(.86) brightness(1.06);
   }
   .hero::after{
     z-index:1;
-    background:linear-gradient(0deg,var(--bg),transparent 22%);
+    background:linear-gradient(to bottom,transparent 76%,var(--bg) 100%);
   }
   .hero-content{
     z-index:2;
